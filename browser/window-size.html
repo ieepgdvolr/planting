@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tag{
+            display: inline-block; /* 컨텐츠를 감싸면서 사이즈를 맞춰줌 */
+            background-color: wheat;
+            padding: 16px;
+            margin-top: 16px;
+            font-size: 48px ;
+        }
+    </style>
+</head>
+<body>
+    '<div class="tag">window-size</div>
+    <script>
+        const tag = document.querySelector('.tag'); /* document 요소중에 첫번째로 발견되는 tag가 tag변수에 할당됨.*/
+        function updateTag() {
+             /* tag안에 새로운 html요소를 넣어줄거야 */
+             tag.innerHTML = `     
+            window.screen : ${window.screen.width}, ${window.screen.height}
+            window.outer  : ${window.outerWidth}, ${window.outerHeight}
+            window.inner  : ${window.innerWidth}, ${window.innerHeight}
+            documentElement.clientWidth : ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+            `; 
+        }
+
+        
+        window.addEventListener('resize', () => {
+           updateTag();
+        }); 
+        /* 페이지가 제일 처음에 로딩될때 호출됨 */
+        updateTag();
+ 
+
+        window.outerHeigh
+    </script>
+</body>
+</html>
